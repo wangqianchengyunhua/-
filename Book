@@ -1,0 +1,116 @@
+/*1*/
+package Java.案例.book;
+
+public class Book {
+    //一本书的属性包括书名，作者，价格，类型，编号，以及状态
+    private String name;
+    private String author;
+    private int price;
+    private String type;
+    private int num;
+    private boolean status;
+
+    //提供构造方法
+    public Book(String name, String author, int price, String type, int num) {
+        this.name = name;
+        this.author = author;
+        this.price = price;
+        this.type = type;
+        this.num = num;
+   }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public int getNum() {
+        return num;
+    }
+
+    public void setNum(int num) {
+        this.num = num;
+    }
+
+    public boolean isStatus() {
+        return status;
+    }
+
+    public void setStatus(boolean status) {
+        this.status = status;
+    }
+
+    //toString 方法打印
+
+    @Override
+    public String toString() {
+        return "Book{" +
+                "name='" + name + '\'' +
+                ", author='" + author + '\'' +
+                ", price=" + price +
+                ", type='" + type + '\'' +
+                ", num=" + num +
+                ", status=" + status +
+                '}';
+    }
+}
+/*2*/
+package Java.案例.book;
+
+public class BookList {
+    //书都是同一类型的元素，创建一个book类型的数组
+    private Book[] books;
+    private  int size;
+
+    //先给书架放三本书
+    public BookList() {
+        this.books = new Book[10];
+        books[0] = new Book("张","小张",10,"小说",1);
+        books[1] = new Book("王","小王",23,"小说",3);
+        books[2] = new Book("李","小李",20,"小说",2);
+        this.size = 3;
+    }
+
+    public Book getBook(int pos) {
+        return this.books[pos];
+    }
+
+    public void setBooks(int pos,Book book) {
+        this.books[pos] = book;
+    }
+
+    public int getSize() {
+        return size;
+    }
+
+    public void setSize(int size) {
+        this.size = size;
+    }
+}
